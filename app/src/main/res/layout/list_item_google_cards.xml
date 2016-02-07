@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="340dp"
+    android:background="@drawable/card_background_white"
+    android:minHeight="340dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_weight="0"
+        android:minHeight="180dp">
+        <ImageView
+            android:id="@+id/GcardImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="main image"
+            android:scaleType="centerCrop"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/google_cards_background_bottom"
+        android:gravity="right"
+        android:orientation="vertical">
+
+
+        <com.flink.flink_app.flink_app.font.RobotoTextView
+            android:id="@+id/GcargTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/material_blue_grey_300"
+            android:textSize="24sp"
+            app:typeface="robotoRegular"/>
+
+        <com.flink.flink_app.flink_app.views.CustomProgress
+            android:layout_width="280dp"
+            android:layout_height="25dp"
+            android:layout_marginBottom="12dp"
+            android:id="@+id/gCardBar"
+            android:layout_gravity="center_horizontal" />
+
+        <com.flink.flink_app.flink_app.font.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:id="@+id/monto"
+            android:textColor="@color/material_blue_grey_300"
+            android:textSize="14sp"
+            android:layout_below="@+id/gCardBar"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
