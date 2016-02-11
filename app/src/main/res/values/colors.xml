@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/material_blue_900</color>
-    <color name="colorPrimaryDark">#125688</color>
+    <color name="colorPrimary">#069FBA</color>
+    <color name="colorPrimaryDark">@color/material_light_blue_400</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
-    <color name="navigationBarColor">#000000</color>
+    <color name="navigationBarColor">#EDF5F4</color>
     <color name="colorAccent">#c8e8ff</color>
+    <color name="flink_1">#FAF5FA</color>
+    <color name="flink_2">#ED556F</color>
+    <color name="flink_3">#1DB3CC</color>
 
 
     <color name="main_color_grey_500">@color/material_grey_500</color>

@@ -26,4 +26,9 @@
         <item name="android:dividerHeight">0dp</item>
     </style>
 
+    <style name="buttonThme">
+        <item name="android:background">@color/flink_2</item>
+        <item name="android:textColor">@color/flink_1</item>
+    </style>
+
 </resources>

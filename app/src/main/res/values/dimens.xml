@@ -7,4 +7,17 @@
     <dimen name="tab_label">14sp</dimen>
     <dimen name="custom_tab_layout_height">72dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="delta_y">200dp</dimen>
+
+
+    <!--Dimmens Splash Activity -->
+    <dimen name="editTextW">280dp</dimen>
+    <dimen name="editTextH">50dp</dimen>
+
+    <dimen name="buttontW">280dp</dimen>
+    <dimen name="buttonH">50dp</dimen>
+    <dimen name="margin_text_help">39dp</dimen>
+    <dimen name="margin_text_flink">10dp</dimen>
+    <dimen name="margin_button_seesion">59dp</dimen>
+    <dimen name="margin_edit_user">53dp</dimen>
 </resources>

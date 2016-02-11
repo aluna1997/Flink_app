@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Dimmens Splash Activity -->
+    <dimen name="editTextW">280dp</dimen>
+    <dimen name="editTextH">50dp</dimen>
+
+    <dimen name="buttontW">280dp</dimen>
+    <dimen name="buttonH">50dp</dimen>
+    <dimen name="margin_text_help">39dp</dimen>
+    <dimen name="margin_text_flink">10dp</dimen>
+    <dimen name="margin_button_seesion">59dp</dimen>
+    <dimen name="margin_edit_user">22dp</dimen>
+    <dimen name="margin_edit_password">22dp</dimen>
+
+
+</resources>

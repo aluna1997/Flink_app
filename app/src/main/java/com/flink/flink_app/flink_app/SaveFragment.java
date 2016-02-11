@@ -1,6 +1,7 @@
 package com.flink.flink_app.flink_app;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -38,6 +39,7 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
     private static final int INITIAL_DELAY_MILLIS = 300;
     private SwingBottomInAnimationAdapter swingBottomInAnimationAdapter;
     private ListView listCard;
+    private ProgressDialog pd;
 
     public SaveFragment() {
         // Required empty public constructor
@@ -54,8 +56,13 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ImageUtil load = new ImageUtil(getActivity());
-        googleCardAdapter = new GoogleCardAdapter(getActivity(), getRequestData() );
 
+       // pd = new ProgressDialog(this.getActivity(), ProgressDialog.STYLE_SPINNER);
+        //pd.isIndeterminate();
+        //pd.show(this.getActivity(),"PROG_DIALOG","Getting data...");
+
+
+        googleCardAdapter = new GoogleCardAdapter(getActivity(), getRequestData() );
 
 
 
@@ -68,8 +75,9 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
     @Override
     public void onResume(){
         super.onResume();
+        //pd.dismiss();
 
-       // swingBottomInAnimationAdapter.notifyDataSetChanged();
+       swingBottomInAnimationAdapter.notifyDataSetChanged();
 
     }
 
@@ -133,36 +141,37 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
         VolleyRequest volleyRequest = new VolleyRequest("https://glaring-torch-9748.firebaseio.com/goals.json", getActivity());
         final ArrayList<ApiModel> list = new ArrayList<>();
 
-//       /* volleyRequest.getRequest(new VolleyCallBack() {
-//            @Override
-//            public void onSuccess(JSONObject data) {
-//                // Log.i("JsonRquest", String.valueOf(data.length())); Test
-//                for (int i = 0; i < data.length(); i++) {
-//                    try {
-//                        JSONObject goal = data.getJSONObject("g" + String.valueOf(i + 1));
-//                        float total = goal.getInt("save")/goal.getInt("amount");
-//                        list.add(new ApiModel(i,goal.getString("url"),goal.getString("target"),total));
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//            }
-//
-//            @Override
-//            public void customOnSuccess(JSONObject string) {
-//                //Some Stuff here
-//            }
-//        });*/
+       volleyRequest.getRequest(new VolleyCallBack() {
+           @Override
+           public void onSuccess(JSONObject data) {
 
-        list.add(new ApiModel(0, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/0.jpg", "Monument walk tour", 0.75F));
-        list.add(new ApiModel(1, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/1.jpg", "Diving in sea", 0.15f));
-        list.add(new ApiModel(2, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/2.jpg", "Fall in Prague", 0.43f));
-        list.add(new ApiModel(3, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/3.jpg", "San Francisco tour", 0.32f));
-        list.add(new ApiModel(4, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/4.jpg", "Geyser on Island", 0.28f));
-        list.add(new ApiModel(5, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/5.jpg", "Old house tour",0.94f));
-        list.add(new ApiModel(6, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/6.jpg", "Hitchhike", 0.37f));
-        list.add(new ApiModel(7, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/7.jpg", "Beach walk tour", 0.21f));
+               // Log.i("JsonRquest", String.valueOf(data.length())); Test
+               for (int i = 0; i < data.length(); i++) {
+                   try {
+                       JSONObject goal = data.getJSONObject("g" + String.valueOf(i + 1));
+                       float total = goal.getInt("save") / goal.getInt("amount");
+                       list.add(new ApiModel(i, goal.getString("url"), goal.getString("target"), total));
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
+               }
+               swingBottomInAnimationAdapter.notifyDataSetChanged();
+           }
+
+           @Override
+           public void customOnSuccess(JSONObject string) {
+               //Some Stuff here
+           }
+        });
+
+        /*list.add(new ApiModel(5, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/0.jpg", "Monument walk tour", 0.75F));
+        list.add(new ApiModel(6, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/1.jpg", "Diving in sea", 0.15f));
+        list.add(new ApiModel(7, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/2.jpg", "Fall in Prague", 0.43f));
+        list.add(new ApiModel(8, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/3.jpg", "San Francisco tour", 0.32f));
+        list.add(new ApiModel(9, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/4.jpg", "Geyser on Island", 0.28f));
+        list.add(new ApiModel(10, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/5.jpg", "Old house tour",0.94f));
+        list.add(new ApiModel(11, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/6.jpg", "Hitchhike", 0.37f));
+        list.add(new ApiModel(12, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/7.jpg", "Beach walk tour", 0.21f));*/
 
         return list;
     }

@@ -2,12 +2,206 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:style="http://schemas.android.com/apk/res-auto"
     tools:context="com.flink.flink_app.flink_app.CreditFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$2,000.00"
+        android:id="@+id/credit_text_value"
+        android:layout_marginTop="48dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:textColor="@color/flink_3"/>
+
+
+    <SeekBar
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:id="@+id/credit_amount"
+        android:progressDrawable="@drawable/apptheme_scrubber_progress_horizontal_holo_light"
+        android:thumb="@drawable/apptheme_scrubber_control_selector_holo_light"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="81dp" />
+
+    <SeekBar
+        android:layout_marginTop="51dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/credit_time"
+        android:max="30"
+        android:progressDrawable="@drawable/apptheme_scrubber_progress_horizontal_holo_light"
+        android:thumb="@drawable/apptheme_scrubber_control_selector_holo_light"
+        android:progress="15"
+        android:layout_below="@+id/credit_first_value"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1,000.00"
+        android:id="@+id/credit_first_value"
+        android:textColor="@color/main_color_grey_900"
+        android:textSize="12sp"
+        android:layout_marginLeft="8dp"
+        android:layout_below="@+id/credit_amount"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3,000.00"
+        android:id="@+id/credit_final_value"
+        android:textColor="@color/main_color_grey_900"
+        android:textSize="12sp"
+        android:layout_marginRight="8dp"
+        android:layout_below="@+id/credit_amount"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cúanto Dinero Deseeas?"
+        android:id="@+id/credit_title_text"
+        android:layout_alignBottom="@+id/credit_text_value"
+        android:layout_alignStart="@+id/credit_first_value"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cúanto Tiempo Necesitas?"
+        android:id="@+id/time_title_text"
+        android:layout_below="@+id/credit_first_value"
+        android:layout_alignStart="@+id/credit_first_value"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 Días"
+        android:id="@+id/time_value_text"
+        android:layout_alignTop="@+id/time_title_text"
+        android:layout_alignEnd="@+id/credit_text_value"
+        android:textColor="@color/flink_3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/time_start_text"
+        android:layout_below="@+id/credit_time"
+        android:layout_alignStart="@+id/time_title_text"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:id="@+id/time_final_text"
+        android:layout_below="@+id/credit_time"
+        android:layout_alignEnd="@+id/credit_final_value"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Solicita el credito"
+        android:id="@+id/button_credit_create"
+        android:background="@color/flink_2"
+        android:textColor="@color/flink_1"
+        android:layout_below="@+id/text_pdate_value"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+       />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prestamo"
+        android:id="@+id/text_lend_title"
+        android:textColor="@color/main_color_grey_900"
+        android:layout_alignTop="@+id/text_interest_title"
+        android:layout_toEndOf="@+id/time_start_text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Interes"
+        android:id="@+id/text_interest_title"
+        android:layout_alignTop="@+id/text_total_title"
+        android:layout_toEndOf="@+id/credit_title_text"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total a pagar"
+        android:id="@+id/text_total_title"
+        android:layout_below="@+id/time_final_text"
+        android:layout_alignStart="@+id/credit_text_value"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/main_color_grey_900"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$1,500.00"
+        android:id="@+id/text_amount_value"
+        android:textColor="@color/flink_3"
+        android:layout_alignTop="@+id/text_interest_value"
+        android:layout_alignEnd="@+id/text_lend_title" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="382.82"
+        android:id="@+id/text_interest_value"
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/text_interest_title"
+        android:textColor="@color/flink_3"
+        android:layout_below="@+id/text_interest_title"
+        android:layout_marginTop="3dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$2387.90"
+        android:id="@+id/text_total_value"
+        android:layout_alignTop="@+id/text_interest_value"
+        android:layout_alignEnd="@+id/time_value_text"
+        android:textColor="@color/flink_3"
+        android:layout_below="@+id/text_total_title"
+        android:layout_marginTop="3dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26 de Febrero del 2016 "
+        android:id="@+id/text_pdate_value"
+        android:layout_below="@+id/text_pdate_title"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/flink_3"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Pago:"
+        android:id="@+id/text_pdate_title"
+        android:layout_below="@+id/text_interest_value"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/main_color_grey_900"/>
+
 
 </RelativeLayout>
