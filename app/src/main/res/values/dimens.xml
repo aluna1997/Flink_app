@@ -20,4 +20,11 @@
     <dimen name="margin_text_flink">10dp</dimen>
     <dimen name="margin_button_seesion">59dp</dimen>
     <dimen name="margin_edit_user">53dp</dimen>
+
+    <!--Dimmens float button-->
+    <dimen name="margin_button_left">280dp</dimen>
+    <dimen name="margin_button_top">350dp</dimen>
+
+
+
 </resources>

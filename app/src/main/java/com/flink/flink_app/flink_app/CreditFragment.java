@@ -13,6 +13,10 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.flink.flink_app.flink_app.componets.CreditConfirmDialog;
+import com.flink.flink_app.flink_app.componets.DialogEmail;
+import com.flink.flink_app.flink_app.util.DateClass;
+
 import java.math.BigInteger;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -46,6 +50,9 @@ public class CreditFragment extends Fragment {
     private TextView interestValue;
     private TextView amountText;
     private TextView payDate;
+    private Button  creditButton;
+
+    private String pdate;
 
    private long timeInMills = timeCreditValue*24*60*60*1000;
 
@@ -79,7 +86,7 @@ public class CreditFragment extends Fragment {
         totalCreditText = (TextView) getActivity().findViewById(R.id.text_total_value);
         payDate = (TextView) getActivity().findViewById(R.id.text_pdate_value);
 
-        payDate.setText(c.get(Calendar.DAY_OF_MONTH)+" de "+getMonth(c.get(Calendar.MONTH)+1)+" del "+c.get(Calendar.YEAR));
+        payDate.setText(c.get(Calendar.DAY_OF_MONTH)+" de "+ DateClass.getMonth(c.get(Calendar.MONTH) + 1)+" del "+c.get(Calendar.YEAR));
 
         //Set time credit value;
         timeCreditBar = (SeekBar) getActivity().findViewById(R.id.credit_time);
@@ -92,6 +99,8 @@ public class CreditFragment extends Fragment {
         creditBar.setMax(20);
         creditBar.setProgress(10);
 
+        creditButton = (Button) getActivity().findViewById(R.id.button_credit_create);
+
         final NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
         DecimalFormatSymbols decimalFormatSymbols = new DecimalFormatSymbols();
         decimalFormatSymbols.setCurrencySymbol("");
@@ -101,7 +110,7 @@ public class CreditFragment extends Fragment {
 
         interestValue.setText("$" + moneyFormat.format(interest));
         amountText.setText("$"+moneyFormat.format((creditAmount)));
-        totalCreditText.setText("$"+moneyFormat.format(totalCredit));
+        totalCreditText.setText("$" + moneyFormat.format(totalCredit));
 
         creditBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 
@@ -110,12 +119,12 @@ public class CreditFragment extends Fragment {
                 creditAmount = creditValues[progress];
 
 
-                creditText.setText("$"+moneyFormat.format(creditAmount));
+                creditText.setText("$" + moneyFormat.format(creditAmount));
 
                 interest = creditAmount*PERCENT*timeCreditBar.getProgress();
-                interestValue.setText("$"+moneyFormat.format(interest));
+                interestValue.setText("$" + moneyFormat.format(interest));
 
-                amountText.setText("$"+moneyFormat.format(creditAmount));
+                amountText.setText("$" + moneyFormat.format(creditAmount));
 
                 totalCredit = creditAmount+interest;
 
@@ -154,10 +163,11 @@ public class CreditFragment extends Fragment {
                 Log.i("Fecha de hoy",String.valueOf(current));
                 Log.i("Fecha con suma",String.valueOf(c.getTimeInMillis()) );
                 Log.i("fecha sumada",String.valueOf(mills));
-                Log.i("Progress value",String.valueOf(progress));
+                Log.i("Progress value", String.valueOf(progress));
 
                 c.setTimeInMillis(mills + current);
-                payDate.setText(c.get(Calendar.DAY_OF_MONTH) + " de " + getMonth(c.get(Calendar.MONTH) + 1) + " del " + c.get(Calendar.YEAR));
+                pdate=c.get(Calendar.DAY_OF_MONTH) + " de " + DateClass.getMonth(c.get(Calendar.MONTH) + 1) + " del " + c.get(Calendar.YEAR);
+                payDate.setText(pdate);
 
 
 
@@ -173,28 +183,25 @@ public class CreditFragment extends Fragment {
             public void onStopTrackingTouch(SeekBar seekBar) {
 
             }
+
+        });
+
+        creditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("credit",moneyFormat.format(creditAmount));
+                args.putString("total",moneyFormat.format(totalCredit));
+                args.putString("date",pdate);
+                FragmentManager manager = getActivity().getFragmentManager();
+                CreditConfirmDialog creditDialog = new CreditConfirmDialog();
+                creditDialog.setArguments(args);
+                creditDialog.show(manager, "DialogEmail");
+            }
         });
 
 
     }
 
-    private String getMonth (int month){
-        String m= null;
-        switch(month) {
-            case 1: m= "Enero"; break;
-            case 2:  m= "Febrero"; break;
-            case 3: m= "Marzo"; break;
-            case 4: m= "Abril"; break;
-            case 5: m= "Mayo"; break;
-            case 6: m= "Junio"; break;
-            case 7: m= "Julio"; break;
-            case 8: m= "Agosto"; break;
-            case 9: m= "Septiembre"; break;
-            case 10: m= "Octubre"; break;
-            case 11: m= "Noviembre"; break;
-            case 12: m= "Diciembre"; break;
 
-        }
-        return m;
-    }
 }

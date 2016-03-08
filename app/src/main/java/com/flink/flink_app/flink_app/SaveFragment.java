@@ -1,14 +1,22 @@
 package com.flink.flink_app.flink_app;
 
 
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.transition.ChangeBounds;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.transition.Visibility;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +26,7 @@ import android.widget.ListView;
 import com.flink.flink_app.flink_app.adapter.GoogleCardAdapter;
 import com.flink.flink_app.flink_app.model.ApiModel;
 import com.flink.flink_app.flink_app.util.ImageUtil;
+import com.flink.flink_app.flink_app.util.Sample;
 import com.flink.flink_app.flink_app.util.VolleyCallBack;
 import com.flink.flink_app.flink_app.util.VolleyRequest;
 import com.nhaarman.listviewanimations.appearance.simple.SwingBottomInAnimationAdapter;
@@ -41,6 +50,11 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
     private ListView listCard;
     private ProgressDialog pd;
 
+    private FloatingActionButton addGoal;
+
+
+
+
     public SaveFragment() {
         // Required empty public constructor
     }
@@ -55,6 +69,8 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_save, container, false);
+
         ImageUtil load = new ImageUtil(getActivity());
 
        // pd = new ProgressDialog(this.getActivity(), ProgressDialog.STYLE_SPINNER);
@@ -66,8 +82,27 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
 
 
 
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_save, container, false);
+
+
+
+        addGoal = (FloatingActionButton)rootView.findViewById(R.id.button_add_goal);
+
+        addGoal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+
+                fragmentTransaction.setCustomAnimations(R.anim.slide_left_in,R.anim.slide_left_out,R.anim.slide_right_in,R.anim.slide_right_out);
+
+                AddGoalFragment fragment = AddGoalFragment.getInstance();
+
+                fragmentTransaction.replace(R.id.root_fragment,new AddGoalFragment());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+            }
+        });
 
         return rootView;
     }
@@ -175,4 +210,7 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
 
         return list;
     }
+
+
+
 }

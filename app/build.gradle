@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.databinding'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
@@ -32,4 +32,5 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
     compile 'com.github.PhilJay:MPAndroidChart:v2.2.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'info.hoang8f:android-segmented:1.0.6'
 }

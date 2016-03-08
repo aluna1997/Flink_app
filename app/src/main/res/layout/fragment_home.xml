@@ -4,6 +4,45 @@
     android:layout_height="match_parent"
     tools:context="com.flink.flink_app.flink_app.HomeFragment">
 
+    <LinearLayout
+        android:id="@+id/Credit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+       >
+        <Button
+            android:id="@+id/button_home_credit"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="+Solicita un Credito"
+            style="@style/buttonHome"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/Credit_layout"
+        android:id="@+id/Goal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Goal_layout">
+        <Button
+            android:id="@+id/button_home_spend"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Empieza a administrar tus Gastos"
+            style="@style/buttonHome"/>
+    </LinearLayout>
+
 
 
 </RelativeLayout>

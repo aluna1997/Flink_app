@@ -7,6 +7,8 @@
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
         <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+
+
     </style>
     <style name="ListViewStyle">
         <item name="android:layout_width">match_parent</item>
@@ -17,5 +19,7 @@
         <item name="android:divider">@android:color/transparent</item>
         <item name="android:dividerHeight">0dp</item>
     </style>
+
+
 
 </resources>

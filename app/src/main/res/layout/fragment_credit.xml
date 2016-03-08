@@ -115,12 +115,11 @@
         android:layout_height="wrap_content"
         android:text="Solicita el credito"
         android:id="@+id/button_credit_create"
-        android:background="@color/flink_2"
-        android:textColor="@color/flink_1"
         android:layout_below="@+id/text_pdate_value"
+        android:textColor="@color/flink_1"
         android:layout_marginTop="15dp"
         android:layout_centerHorizontal="true"
-       />
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
     <TextView
         android:layout_width="wrap_content"

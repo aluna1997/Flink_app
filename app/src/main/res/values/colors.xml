@@ -5,10 +5,14 @@
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#EDF5F4</color>
-    <color name="colorAccent">#c8e8ff</color>
+    <color name="colorAccent">@color/flink_2</color>
+    <color name="colorButtonNormal">@color/flink_2</color>
+
+
     <color name="flink_1">#FAF5FA</color>
     <color name="flink_2">#ED556F</color>
     <color name="flink_3">#1DB3CC</color>
+
 
 
     <color name="main_color_grey_500">@color/material_grey_500</color>

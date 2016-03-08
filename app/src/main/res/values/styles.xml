@@ -4,12 +4,15 @@
 
     </style>
 
-    <style name="FlinkTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="FlinkTheme.Base" parent="Theme.AppCompat.Light">
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/material_grey_800</item>
+
+
     </style>
 
     <style name="FlinkTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -26,9 +29,32 @@
         <item name="android:dividerHeight">0dp</item>
     </style>
 
-    <style name="buttonThme">
-        <item name="android:background">@color/flink_2</item>
-        <item name="android:textColor">@color/flink_1</item>
+    <style name="buttonHome" >
+        <item name="android:background">@drawable/button_border_home</item>
+        <item name="android:textColor">@color/flink_3</item>
+        <item name="android:gravity">center</item>
     </style>
+
+    <style name="TextGoal">
+
+       <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor"> @color/main_color_grey_900</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="RadioButtonSegm" parent="RadioButton">
+        <item name="android:textColor">@drawable/selector_radio_button</item>
+    </style>
+
+
+    <style name="CancelButtonStyle" parent="Widget.AppCompat.Button.Colored">
+
+        <item name="colorButtonNormal">#555</item>
+        <item name="android:textColorPrimary">#fff</item>
+
+    </style>
+
+
 
 </resources>

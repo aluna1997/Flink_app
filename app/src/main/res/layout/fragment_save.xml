@@ -1,12 +1,25 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.flink.flink_app.flink_app.SaveFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.flink.flink_app.flink_app.SaveFragment"
+    android:id="@+id/save_fragment">
 
     <ListView
         android:id="@+id/list_view"
         style="@style/ListViewStyle"
         />
 
-</RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_add_goal"
+        android:clickable="true"
+        android:src="@drawable/ic_add_white_48dp"
+        android:layout_marginLeft="@dimen/margin_button_left"
+        android:layout_marginTop="@dimen/margin_button_top"/>
+
+
+
+</android.support.design.widget.CoordinatorLayout>

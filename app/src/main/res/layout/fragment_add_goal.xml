@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.flink.flink_app.flink_app.AddGoalFragment">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:id="@+id/charge_image"
+    android:background="@drawable/flink_gradient">
+    <ImageView
+        android:id="@+id/camara_select_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_photo_camera_white_24px"
+        android:layout_marginLeft="165dp"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige una Imagen"
+        android:textColor="@color/flink_1"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="115dp"/>
+</FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charge_image"
+        android:layout_marginLeft="20dp"
+        android:text="¿Qué quieres comprar?"
+        style="@style/TextGoal"
+        android:id="@+id/goal_title_wish" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:id="@+id/goal_wish"
+        android:layout_below="@+id/goal_title_wish"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_between_title"
+        android:hint="Xbox One"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cúando lo quieres?"
+        android:id="@+id/goal_date_title"
+        style="@style/TextGoal"
+        android:layout_below="@+id/goal_wish"
+        android:layout_alignStart="@+id/goal_title_wish" />
+    <Button
+        android:id="@+id/button_goal_date"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:drawableTop="@drawable/ic_today_white_24px"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_below="@+id/goal_date_title"
+        android:layout_marginLeft="@dimen/space_button_date"/>
+    <TextView
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:hint="27 de febrero del 2017"
+        android:id="@+id/goal_date_text"
+       android:layout_below="@+id/goal_date_title"
+        android:layout_alignStart="@+id/goal_date_title"
+        android:layout_marginTop="15dp"/>
+    <TextView
+        android:id="@+id/goal_cost_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/goal_date_title"
+        android:layout_below="@+id/goal_date_text"
+        android:text="¿Cúanto Cuesta?"
+        style="@style/TextGoal"
+        />
+    <EditText
+        android:id="@+id/goal_cost"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/space_between_title"
+        android:hint="2000.000"
+        android:inputType="numberDecimal"
+        android:layout_below="@+id/goal_cost_title"
+        />
+    <TextView
+        android:id="@+id/goal_period_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/goal_date_title"
+        android:layout_below="@+id/goal_cost"
+        android:text="¿Cada cuando ahorras?"
+        style="@style/TextGoal"
+        />
+
+    <RadioGroup
+        android:id="@+id/radio_period_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/goal_period_title"
+        android:layout_centerHorizontal="true"
+        >
+
+
+        <RadioButton
+            android:id="@+id/opcion1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diario"
+            style="@style/RadioButtonSegm"
+            />
+
+        <RadioButton
+            android:id="@+id/opcion2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semanal"
+            style="@style/RadioButtonSegm"/>
+
+        <RadioButton
+            android:id="@+id/opcion3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quincenal"
+            style="@style/RadioButtonSegm"/>
+        <RadioButton
+            android:id="@+id/opcion4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mensual"
+            style="@style/RadioButtonSegm"/>
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/radio_period_group"
+        android:text="Guardar"
+        android:layout_marginLeft="@dimen/space_button_save"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/radio_period_group"
+        android:text="Cancelar"
+        android:textSize="15sp"
+        android:textColor="@color/flink_1"
+        android:layout_marginLeft="@dimen/space_button_cancel"
+        />
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu credito:"
+        android:id="@+id/dialog_credit_amount"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total a pagar:"
+        android:id="@+id/dialog_credit_total"
+        android:layout_below="@+id/dialog_credit_amount"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog_credit_total"
+        android:text="Fecha de Pago:"
+        android:id="@+id/dialog_credit_date"
+       android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

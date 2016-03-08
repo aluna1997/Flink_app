@@ -16,11 +16,14 @@
 
     <!--Dimmens float button-->
     <dimen name="margin_button_left">280dp</dimen>
-    <dimen name="margin_button_top">415dp</dimen>
+    <dimen name="margin_button_top">380dp</dimen>
 
     <!--Dimmens create goal-->
     <dimen name="space_between_title">5dp</dimen>
-    <dimen name="space_button_date">220dp</dimen>
+    <dimen name="space_button_date">200dp</dimen>
     <dimen  name="space_button_save">220dp</dimen>
     <dimen name="space_button_cancel">80dp</dimen>
+
+
+
 </resources>
