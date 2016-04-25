@@ -12,7 +12,6 @@ import com.flink.flink_app.flink_app.R;
 import com.flink.flink_app.flink_app.font.RobotoTextView;
 import com.flink.flink_app.flink_app.model.ApiModel;
 import com.flink.flink_app.flink_app.util.ImageUtil;
-import com.flink.flink_app.flink_app.views.CustomProgress;
 
 import java.util.List;
 
@@ -45,8 +44,8 @@ public class GoogleCardAdapter extends ArrayAdapter<ApiModel>{
 
             holder.image = (ImageView) convertView.findViewById(R.id.GcardImage);
             holder.title = (TextView) convertView.findViewById(R.id.GcargTitle);
-            holder.bar = (CustomProgress) convertView.findViewById(R.id.gCardBar);
-            holder.amount = (RobotoTextView) convertView.findViewById(R.id.monto);
+           // holder.bar = (CustomProgress) convertView.findViewById(R.id.gCardBar);
+            holder.amount = (RobotoTextView) convertView.findViewById(R.id.Gcardmonto);
             convertView.setTag(holder);
 
         }else{ holder = (ViewHolder) convertView.getTag(); }
@@ -54,10 +53,10 @@ public class GoogleCardAdapter extends ArrayAdapter<ApiModel>{
         ApiModel item = getItem(position);
         ImageUtil.displayImage(holder.image, item.getImageURL(), null);
         holder.title.setText(item.getText());
-        holder.bar.setMaximumPercentage(item.getProgress());
+        /*holder.bar.setMaximumPercentage(item.getProgress());
         holder.bar.setProgressColor(R.color.material_blue_900);
         holder.bar.setProgressBackgroundColor(R.color.material_blue_600);
-        holder.bar.useRoundedRectangleShape(30.0f);
+        holder.bar.useRoundedRectangleShape(30.0f); */
         holder.amount.setText("$10,000.00");
 
         return convertView;
@@ -66,7 +65,7 @@ public class GoogleCardAdapter extends ArrayAdapter<ApiModel>{
     private static class ViewHolder {
         public ImageView image;
         public TextView title;
-        public CustomProgress bar;
+       // public CustomProgress bar;
         public  RobotoTextView amount;
     }
 

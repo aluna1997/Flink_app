@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="340dp"
+    android:layout_height="220dp"
     android:background="@drawable/card_background_white"
     android:minHeight="340dp">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="match_parent"
         android:layout_weight="0"
         android:minHeight="180dp">
         <ImageView
@@ -17,48 +17,76 @@
             android:layout_height="match_parent"
             android:contentDescription="main image"
             android:scaleType="centerCrop"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_gradient" />
 
-    </RelativeLayout>
+        <com.github.ivbaranov.mfb.MaterialFavoriteButton
+            android:id="@+id/GcardFavbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:mfb_favorite_image="@drawable/ic_star_yellow_48px"
+            app:mfb_not_favorite_image="@drawable/ic_star_border_yellow_48px"
+            app:mfb_animate_favorite="true"  />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
-        android:background="@drawable/google_cards_background_bottom"
-        android:gravity="right"
-        android:orientation="vertical">
 
+        <com.flink.flink_app.flink_app.font.RobotoTextView
+            android:id="@+id/Gcardate"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:textColor="@color/flink_1"
+            app:typeface="robotoBold"
+            android:textSize="24sp"
+            android:text="28/Abr/2015"
+            />
+
+        <com.flink.flink_app.flink_app.font.RobotoTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="120dp"
+            android:id="@+id/Gcardmonto"
+            android:layout_alignBaseline="@+id/Gcardate"
+            android:textColor="@color/flink_1"
+            android:textSize="18sp"
+            app:typeface="robotoBold"
+            android:text="Total: $10000.00"
+            />
 
         <com.flink.flink_app.flink_app.font.RobotoTextView
             android:id="@+id/GcargTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/material_blue_grey_300"
-            android:textSize="24sp"
-            app:typeface="robotoRegular"/>
+            android:layout_marginTop="150dp"
+            android:textColor="@color/flink_1"
+            android:textSize="20sp"
+            app:typeface="robotoLight"/>
 
-        <com.flink.flink_app.flink_app.views.CustomProgress
-            android:layout_width="280dp"
-            android:layout_height="25dp"
-            android:layout_marginBottom="12dp"
-            android:id="@+id/gCardBar"
-            android:layout_gravity="center_horizontal" />
+       <com.flink.flink_app.flink_app.font.RobotoTextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/Gcardresta"
+           android:text="Falta: $5000.00"
+           android:layout_alignBaseline="@+id/GcargTitle"
+           android:textColor="@color/flink_1"
+           android:textSize="18sp"
+           app:typeface="robotoLight"
+           android:layout_marginTop="150dp"
+           android:layout_marginLeft="200dp"/>
 
-        <com.flink.flink_app.flink_app.font.RobotoTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:id="@+id/monto"
-            android:textColor="@color/material_blue_grey_300"
-            android:textSize="14sp"
-            android:layout_below="@+id/gCardBar"
-            />
 
-    </LinearLayout>
+
+
+
+
+
+    </RelativeLayout>
+
 
 
 </LinearLayout>
