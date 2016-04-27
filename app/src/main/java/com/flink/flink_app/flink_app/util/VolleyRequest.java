@@ -1,13 +1,16 @@
 package com.flink.flink_app.flink_app.util;
 
 import android.content.Context;
+import android.media.MediaRouter;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -17,10 +20,18 @@ public class VolleyRequest {
 
     private String url ;
     private  Context cnx;
-    public JSONObject data;
+    private JSONObject data;
+
+
     public VolleyRequest(String url, Context context){
         this.url = url;
         this.cnx = context;
+    }
+
+    public VolleyRequest(Context cnx,String url, JSONObject data) {
+        this.cnx = cnx;
+        this.url = url;
+        this.data = data;
     }
 
     public  void  getRequest (final VolleyCallBack callBack){
@@ -43,6 +54,40 @@ public class VolleyRequest {
                     }
                 });
         VolleySingleton.getInstance(cnx).addToRequestQueue(jsObjRequest);
+
+    }
+
+    public void postLoginRequest(final VolleyCallBack callback){
+       /* Toast t1 = null;
+
+        try {
+            t1 = Toast.makeText(cnx, "data: "+data.getString("username")+" \n otro: "+data.getString("password"),Toast.LENGTH_LONG);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        t1.show();*/
+
+        //Log.i("URLString",url);
+       JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,url, data, new Response.Listener<JSONObject>(){
+
+            @Override
+            public void onResponse(JSONObject response) {
+
+
+
+                callback.onSuccess(response);
+
+            }
+        }, new Response.ErrorListener(){
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                    Log.i("Error json post : ",error.toString());
+            }
+        });
+
+        VolleySingleton.getInstance(cnx).addToRequestQueue(jsonObjectRequest);
+
+
 
     }
 

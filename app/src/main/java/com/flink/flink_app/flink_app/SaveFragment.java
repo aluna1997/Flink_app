@@ -197,7 +197,12 @@ public class SaveFragment extends Fragment implements OnDismissCallback {
            public void customOnSuccess(JSONObject string) {
                //Some Stuff here
            }
-        });
+
+           @Override
+           public void onSuccess(int status) {
+               //
+           }
+       });
 
         /*list.add(new ApiModel(5, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/0.jpg", "Monument walk tour", 0.75F));
         list.add(new ApiModel(6, "http://pengaja.com/uiapptemplate/newphotos/listviews/googlecards/travel/1.jpg", "Diving in sea", 0.15f));

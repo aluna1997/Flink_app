@@ -3,8 +3,11 @@ package com.flink.flink_app.flink_app;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +15,14 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.flink.flink_app.flink_app.componets.DialogEmail;
+import com.flink.flink_app.flink_app.util.VolleyCallBack;
+import com.flink.flink_app.flink_app.util.VolleyRequest;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SplashActivity extends Activity {
 
@@ -48,8 +57,59 @@ public class SplashActivity extends Activity {
         bSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
-                startActivity(intent);
+
+
+                String user = tUser.getText().toString();
+                String pass = tPass.getText().toString();
+                JSONObject data = new JSONObject();
+
+                try {
+                    data.put("username",user);
+                    data.put("password",pass);
+                    //Toast  t = Toast.makeText(SplashActivity.this,data.toString(),Toast.LENGTH_LONG);
+                    //t.show();
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                VolleyRequest vr = new VolleyRequest(SplashActivity.this,"http://173.255.115.106/auth-token/",data);
+                vr.postLoginRequest(new VolleyCallBack() {
+                    @Override
+                    public void onSuccess(JSONObject data)  {
+                      String  cs = new String();
+                        try {
+                            //cs = "  Token: " + data.getString("token") +"\n"+"cuenta: "+ data.getString("cuenta");
+                            SharedPreferences sp = SplashActivity.this.getPreferences(Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sp.edit();
+                            editor.putString("token",data.getString("token"));
+                            editor.putString("cuenta", data.getString("cuenta"));
+                            editor.commit();
+
+
+                            Intent intent= new Intent(SplashActivity.this,MainActivity.class);
+                            startActivity(intent);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                    }
+
+                    @Override
+                    public void customOnSuccess(JSONObject string) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(int status) {
+
+                    }
+                });
+
+
+
             }
         });
 
