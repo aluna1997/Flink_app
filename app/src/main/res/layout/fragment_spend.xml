@@ -1,9 +1,97 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    tools:context="com.flink.flink_app.flink_app.HomeFragment"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.flink.flink_app.flink_app.HomeFragment">
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Limites"
+        android:layout_marginTop="10dp"
+        style="@style/buttonLarge"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Limite Permanente"
+            style="@style/buttonHome"/>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:weigth="1"
+        android:layout_height="70dp"
+        android:text="           Bloqueo de \n                 $500"
+        style="@style/buttonHome_izq"/>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:weigth="1"
+        android:layout_marginLeft="180dp"
+        android:text="               Fin del límite de \n
+                   20 del mes"
+        style="@style/buttonHome_izq"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Limite Permanente"
+            style="@style/buttonHome_blue"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:weigth="1"
+            android:layout_height="70dp"
+            android:text="           Bloqueo de \n                 $500"
+            style="@style/buttonHome_izq_blue"/>
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:weigth="1"
+            android:layout_marginLeft="180dp"
+            android:text="               Fin del límite de \n
+                   20 del mes"
+            style="@style/buttonHome_izq_blue"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="Movimientos recientes                                     >"
+        android:layout_marginTop="10dp"
+        style="@style/buttonLarge"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:id="@+id/reciclador"
+        android:scrollbars="vertical"
+        >
 
 
+    </android.support.v7.widget.RecyclerView>
 
-</RelativeLayout>
+
+</LinearLayout>
+    </ScrollView>

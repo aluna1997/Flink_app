@@ -29,10 +29,33 @@
         <item name="android:dividerHeight">0dp</item>
     </style>
 
-    <style name="buttonHome" >
+    <style name="buttonLarge" >
         <item name="android:background">@drawable/button_border_home</item>
         <item name="android:textColor">@color/flink_3</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="buttonHome" >
+        <item name="android:background">@color/grey_600</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="buttonHome_blue" >
+        <item name="android:background">@color/blue_500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="buttonHome_izq" >
+        <item name="android:background">@color/grey_600</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+    <style name="buttonHome_izq_blue" >
+        <item name="android:background">@color/blue_500</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="TextGoal">

@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class SplashActivity extends Activity {
 
-
+    //Codigo de Login de Flink
     private ImageView fLogo;
     private EditText tUser;
     private EditText tPass;
@@ -59,7 +59,7 @@ public class SplashActivity extends Activity {
             public void onClick(View v) {
 
 
-                String user = tUser.getText().toString();
+                /*String user = tUser.getText().toString();
                 String pass = tPass.getText().toString();
                 JSONObject data = new JSONObject();
 
@@ -86,16 +86,16 @@ public class SplashActivity extends Activity {
                             editor.putString("cuenta", data.getString("cuenta"));
                             editor.commit();
 
+*/
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
 
-                            Intent intent= new Intent(SplashActivity.this,MainActivity.class);
-                            startActivity(intent);
-
-                        } catch (JSONException e) {
+                      /*  } catch (JSONException e) {
                             e.printStackTrace();
-                        }
+                        }*/
 
 
-                    }
+                    /*}
 
                     @Override
                     public void customOnSuccess(JSONObject string) {
@@ -110,8 +110,10 @@ public class SplashActivity extends Activity {
 
 
 
+            }*/
             }
         });
+
 
         bAyuda.setOnClickListener(new View.OnClickListener() {
             @Override
