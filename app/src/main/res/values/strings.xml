@@ -3,5 +3,23 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="HistorialPagos">
+        <item>Vips\t\t-$250\t\t9:27pm</item>
+        <item>Game Planet\t\t-$800t\t\t2:25pm</item>
+        <item>Hooters\t\t-$370\t\t11:02pm</item>
+        <item>Alejandro Mortero\t\tt+$1200\t\t10:05am</item>
+        <item>The Bear Factory\t\t-$250\t\t\t6:00pm</item>
+        <item>Vips\t\t-$250\t\t\t9:27pm</item>
 
+    </string-array>
+
+    <string-array name="HistorialTransferencias">
+        <item>Diego Landa\t\t\t\t\t\t\t\t\t-$250</item>
+        <item>Game Planet\t\t\t\t\t\t\t\t\t-$800</item>
+        <item>Hooters\t\t\t\t\t\t\t\t\t-$370</item>
+        <item>Alejandro Mortero\t\t\t\t\t\t\t\t\t+$1200</item>
+        <item>The Bear Factory\t\t\t\t\t\t\t\t\t-$250</item>
+        <item>Vips\t\t\t\t\t\t\t\t\t-$250</item>
+
+    </string-array>
 </resources>

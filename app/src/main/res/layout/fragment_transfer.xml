@@ -1,9 +1,41 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    tools:context="com.flink.flink_app.flink_app.HomeFragment"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    tools:context="com.flink.flink_app.flink_app.HomeFragment">
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="Transferencias"
+            android:layout_marginTop="10dp"
+            style="@style/buttonLarge"
+            android:textSize="35dp" />
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Transferencia entre FLINKERS                                >"
+            android:layout_marginTop="10dp"
+            style="@style/buttonLarge"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="Transferencia entre bancos                                     >"
+            android:layout_marginTop="10dp"
+            style="@style/buttonLarge"/>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/HistorialTransferencias" />
 
-</RelativeLayout>
+    </LinearLayout>
+
+</ScrollView>
